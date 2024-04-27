@@ -6,6 +6,9 @@ import com.toyproject.thecommerce.global.exception.LoginIdDuplicateException;
 import com.toyproject.thecommerce.global.exception.NickNameDuplicateException;
 import com.toyproject.thecommerce.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +37,9 @@ public class MemberService {
         Member member = request.PostRequestToEntity(encoder.encode(request.getPassword()));
         member.setCreatedAt(LocalDateTime.now());
         repository.save(member);
+    }
+
+    public Page<Member> findAllMembers(int page, int size) {
+        return repository.findAll(PageRequest.of(page, size, Sort.by("createdAt").descending()));
     }
 }
