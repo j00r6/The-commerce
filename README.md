@@ -23,21 +23,22 @@
 - 이름
 - 전화번호
 - 이메일주소
-
-### API 명세
+### 4. 응답
+- 응답코드 201
+### 5. API 명세
 
 | Category | Description | Method | URI | URL | 
 |----------|-------------|--------|-----|-----|
 | Member   |  회원가입           | POST   |  api/user   | join    | 
 
-###Request
+#### Request
 
-#### 요청 URL
+##### 요청 URL
 ```URL
 localhost:8080/api/user/join
 ```
 
-#### Request Body
+##### Request Body
 ```json
 {
     "loginId" : "adm33in",
@@ -74,23 +75,28 @@ HTTP Status Code 201
 - 응답코드 200
 - 적절한 응답값
 
-### API 명세
+### 5. API 명세
 
 | Category | Description | Method | URI | URL | 
 |----------|-------------|--------|-----|-----|
 | Member   |  회원조회           | get   |  api/user   | list    |  
 
 #### Request
+##### 요청 URL
 ```URL
 localhost:8080/api/user/list?page=1&pageSize=10
 ```
+##### Request Body
+```
+없음
+```
 
 #### Response
-
+##### 응답코드
 ```
 HTTP Status Code 200
 ```
-
+##### Response Body
 ```json
 {
     "data": [
@@ -133,18 +139,22 @@ HTTP Status Code 200
 - pagesize
 - sort (가입일순 , 이름순)
 
-### API 명세
+### 4. 응답
+- 응답코드 200
+- Paging 처리가된 응답값
+
+### 5. API 명세
 
 | Category | Description | Method | URI | URL | 
 |----------|-------------|--------|-----|-----|
 | Member   |  회원조회           | get   |  api/user   | list    |  
 
-### Request
-#### 요청 URL
+#### Request
+##### 요청 URL
 ```URL
 localhost:8080/api/user/admin43
 ```
-#### RequstBody
+##### Requst Body
 ```json
 {
     "loginId" : "admin33",
@@ -157,11 +167,11 @@ localhost:8080/api/user/admin43
 ```
 
 #### Response
-
+##### 응답코드
 ```
 HTTP Status Code 200
 ```
-
+##### Response Body
 ```json
 {
     "loginId" : "admin33",
