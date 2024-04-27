@@ -1,5 +1,6 @@
 package com.toyproject.thecommerce.mapper;
 
+import com.toyproject.thecommerce.dto.PatchRequest;
 import com.toyproject.thecommerce.dto.PostResponse;
 import com.toyproject.thecommerce.entity.Member;
 import org.mapstruct.Mapper;
@@ -9,8 +10,8 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface MemberMapper {
-
-
+    Member memberPatchDtotoMember (PatchRequest patchRequest);
+    PatchRequest memberToMemberResponseDto (Member member);
     default List<PostResponse> PostResponseDtoToMember(List<Member> members) {
         if ( members == null ) {
             return null;
