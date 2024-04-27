@@ -4,7 +4,7 @@
 
 - 운영체제 : macOS Ventura 13.5.1(22G90)
 - 개발툴 : intelliJ IDEA CE
-- SDK : Amazon Corretto Version 1.8.0_412
+- SDK : Amazon Corretto Version 1.8.0_412
 - JAVA 8 & Spring Boot 2.6.2
 
 ## 요구사항 목차
