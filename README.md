@@ -49,9 +49,12 @@ localhost:8080/api/user/join
 }
 ```
 #### Response
+
 ```
 HTTP Status Code 201
+```
 
+```
 회원가입 성공!
 ```
 <br>
@@ -84,7 +87,9 @@ localhost:8080/api/user/list?page=1&pageSize=10
 
 #### Response
 
+```
 HTTP Status Code 200
+```
 
 ```json
 {
@@ -152,9 +157,12 @@ localhost:8080/api/user/admin43
 ```
 
 #### Response
-```json
-HTTP Status Code 200
 
+```
+HTTP Status Code 200
+```
+
+```json
 {
     "loginId" : "admin33",
     "password" : "dd",
