@@ -50,11 +50,11 @@ localhost:8080/api/user/join
 }
 ```
 #### Response
-
+##### 응답코드
 ```
 HTTP Status Code 201
 ```
-
+##### Response Body
 ```
 회원가입 성공!
 ```
