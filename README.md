@@ -62,7 +62,7 @@ localhost:8080/api/user/join
 ```
 HTTP Status Code 201
 ```
-##### Response Body
+##### Response Body
 ```
 회원가입 성공!
 ```
