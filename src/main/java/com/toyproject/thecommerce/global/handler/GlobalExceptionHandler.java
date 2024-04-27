@@ -1,5 +1,6 @@
 package com.toyproject.thecommerce.global.handler;
 
+import com.toyproject.thecommerce.global.exception.BadRequestException;
 import com.toyproject.thecommerce.global.exception.LoginIdDuplicateException;
 import com.toyproject.thecommerce.global.exception.NickNameDuplicateException;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,12 @@ public class GlobalExceptionHandler {
     }
     @ExceptionHandler(NickNameDuplicateException.class)
     public ResponseEntity<Message> handle(NickNameDuplicateException e) {
+        Message message = new Message(e.getMessage(), HttpStatus.CONFLICT);
+        return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<Message> handle(BadRequestException e) {
         Message message = new Message(e.getMessage(), HttpStatus.CONFLICT);
         return new ResponseEntity<>(message, HttpStatus.CONFLICT);
     }

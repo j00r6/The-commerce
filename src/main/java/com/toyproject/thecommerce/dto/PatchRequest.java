@@ -1,5 +1,6 @@
 package com.toyproject.thecommerce.dto;
 
+import com.toyproject.thecommerce.entity.Member;
 import lombok.*;
 
 @Getter
@@ -7,7 +8,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PostResponse {
+public class PatchRequest {
     private String loginId;
     private String password;
     private String nickName;
