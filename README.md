@@ -33,7 +33,7 @@
 
 #### Request
 
-##### 요청 URL
+##### 요청 URI
 ```URL
 localhost:8080/api/user/join
 ```
@@ -82,7 +82,7 @@ HTTP Status Code 201
 | Member   |  회원조회           | get   |  api/user   | list    |  
 
 #### Request
-##### 요청 URL
+##### 요청 URI
 ```URL
 localhost:8080/api/user/list?page=1&pageSize=10
 ```
@@ -150,7 +150,7 @@ HTTP Status Code 200
 | Member   |  회원조회           | get   |  api/user   | list    |  
 
 #### Request
-##### 요청 URL
+##### 요청 URI
 ```URL
 localhost:8080/api/user/admin43
 ```
