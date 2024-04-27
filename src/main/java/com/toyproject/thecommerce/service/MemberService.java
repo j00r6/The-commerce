@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -41,5 +42,33 @@ public class MemberService {
 
     public Page<Member> findAllMembers(int page, int size) {
         return repository.findAll(PageRequest.of(page, size, Sort.by("createdAt").descending()));
+    }
+
+    public Member patchMember(Member member, String loginId) {
+
+        Member findMember = findVerifyMember(loginId);
+
+        Optional.ofNullable(member.getLoginId())
+                .ifPresent(findMember::setLoginId);
+        Optional.ofNullable(member.getPassword())
+                .ifPresent(findMember::setPassword);
+        Optional.ofNullable(member.getNickName())
+                .ifPresent(findMember::setNickName);
+        Optional.ofNullable(member.getName())
+                .ifPresent(findMember::setName);
+        Optional.ofNullable(member.getPhone())
+                .ifPresent(findMember::setPhone);
+        Optional.ofNullable(member.getEmail())
+                .ifPresent(findMember::setEmail);
+        return repository.save(findMember);
+    }
+
+    public Member findVerifyMember(String loginId) {
+        Optional<Member> optionalMember = repository.findByLoginId(loginId);
+        if (!optionalMember.isPresent()) {
+            return null;
+        }
+
+        return optionalMember.get();
     }
 }
