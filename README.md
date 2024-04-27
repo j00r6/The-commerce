@@ -2,7 +2,7 @@
 
 ## 개발환경
 
-- 운영체제 : macOS Ventura 13.5.1(22G90)
+- 운영체제 : M1 PRO macOS Ventura 13.5.1(22G90)
 - 개발툴 : intelliJ IDEA CE
 - 언어 : JAVA
 - FrameWork : Spring Boot 2.6.2
